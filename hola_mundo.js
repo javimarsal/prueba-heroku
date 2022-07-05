@@ -1,13 +1,14 @@
 const express = require('express');
 const app = express();
-const port = 8000;
+require('dotenv').config();
 
-app.set('port', process.env.PORT || port);
+app.set('port', process.env.PORT || 8000);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
-//   return res.sendFile(path.join(__dirname + './index.html'));
 });
 
-app.listen(app.get('port'));
+const port = app.get('port');
+
+app.listen(port);
 console.log('Server on port', port);
