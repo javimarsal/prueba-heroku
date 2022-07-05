@@ -9,5 +9,5 @@ app.get('/', (req, res) => {
 //   return res.sendFile(path.join(__dirname + './index.html'));
 });
 
-app.listen(port);
+app.listen(app.get('port'));
 console.log('Server on port', port);
